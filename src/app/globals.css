@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+
+/* Design tokens */
+@theme {
+  --color-foreground: 0 0 0;
+  --color-background-start: 214 219 220;
+  --color-background-end: 255 255 255;
+}
+
+/* Overrides dark mode */
+@media (prefers-color-scheme: dark) {
+    --color-foreground: 255 255 255;
+    --color-background-start: 0 0 0;
+    --color-background-end: 0 0 0;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  color: rgb(var(--color-foreground));
+  background: linear-gradient(to bottom, transparent, rgb(var(--color-background-end))) rgb(var(--color-background-start));
+}
